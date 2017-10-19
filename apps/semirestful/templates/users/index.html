@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Users Index</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        <h1>Users</h1> 
+        <table style="padding: 10px;">
+            <thead><td>ID</td><td>Full Name</td><td>Email</td><td>Created At</td><td>Actions</td></thead> 
+            <tbody>
+                {% for user in users %}
+                <tr>{{user.id}}</tr><tr>{{user.first_name}} {{user.last_name}}</tr><tr>{{user.created_at}}</tr><tr><a href="users/{{user.id}}">Show</a> | <a href="users/{{user.id}}/edit">Edit</a> | <a href="users/{{user.id}}/delete">Delete</a> </tr><br>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <a href="users/new">Add a new user</a>
+    </body>
+</html>
